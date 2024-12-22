@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+       header {
+    width: 100%;
+    height: 100px; /* Fixed height for the header */
+    background-image: url("https://i.ibb.co/zFxJXgX/Web-Portfolio-5.png"); /* Image URL */
+    background-repeat: repeat; /* Make the image repeat across the header */
+    background-position: center top; /* Positioning the repeated image */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #BB9AB1;
+    box-shadow: 0 4px 6px rgba(0, 2, 0, 0.1); /* Subtle shadow */
+}
+
+        .title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+    padding-left: 20px; 
+
+        }
+
+        nav {
+            position: relative;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            position: relative;
+            display: inline-block;
+            font-size: 1em;
+            font-weight: 800;
+            color: #BB9AB1;
+            text-decoration: none;
+            padding: 0 30px;
+            z-index: 1;
+        }
+
+        nav span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(45deg, #FFEFEF, #FFEFEF);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:nth-child(1):hover ~ span {
+            left: 0;
+        }
+
+        nav a:nth-child(2):hover ~ span {
+            left: 120px;
+        }
+
+        nav a:nth-child(3):hover ~ span {
+            left: 240px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="title">   Web Portfolio</div>
+        <nav>
+            <a href="#">Home</a> <!-- Home links to the same page -->
+            <a href="contact.html">Contact</a>
+            <a href="About.html">About</a>
+            <span></span>
+        </nav>
+    </header>
+
+    <!-- Image Map -->
+    <img src="pro.png" alt="Interactive Map" usemap="#image-map" width="1500" height="700">
+
+    <map name="image-map">
+           <area target="_blank" alt="sec" title="sec" href="security.html" coords="174,905,394,978" shape="rect">
+    <area target="_blank" alt="ml" title="ml" href="ml.html" coords="574,911,733,974" shape="rect">
+    <area target="_blank" alt="DA" title="DA" href="DA.html" coords="942,901,1296,971" shape="rect">
+    <area target="_blank" alt="Guidence" title="Guidence" href="info.html" coords="1492,906,1723,973" shape="rect">
+    </map>
+
+    <!-- Script to Make Image Map Responsive -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+    <script>
+        window.onload = function () {
+            imageMapResize(); // Automatically adjusts <area> coordinates
+        };
+    </script>
+
+</body>
+</html>
+
+
+
+
