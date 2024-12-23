@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Me</title>
+    <style>
+
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #cacbbc;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+
+
+
+        header {
+            width: 100%;
+            height: 150px;
+            background-image: url("https://i.ibb.co/zQnqS9h/Untitled-design-64.png");
+            background-repeat: no-repeat;
+            background-position: center top;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 2, 0, 0.1);
+             padding-top: 10px; 
+            position: relative; 
+        }
+
+
+
+
+      .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav {
+            position: absolute;
+            top: 100%; /* Move nav directly below the title */
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-image: url("https://i.ibb.co/60m8Jgm/Untitled-design-71.png");
+            background-repeat: no-repeat;
+            background-position: center top;
+            width: 100%;
+            height: 50px; 
+            z-index: 1;
+        }
+
+        nav a {
+            display: inline-block;
+            font-size: 1em;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            padding: 0 30px;
+            z-index: 2;
+        }
+
+        nav a.active {
+            color: white;
+            font-weight: bold;
+        }
+
+
+   nav span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(45deg, #cacbbc, #cacbbc);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            z-index: 0;
+        }
+
+
+
+
+        nav a:nth-child(1).active ~ span {
+            left: 0;
+        }
+
+        nav a:nth-child(2).active ~ span {
+            left: 120px;
+        }
+
+        nav a:nth-child(3).active ~ span {
+            left: 240px;
+        }
+
+        /* Main Content Style */
+        .about-content {
+            background-color: #cacbbc;
+            width: 70%;
+            max-width: 1000px;
+            margin-top:40px; 
+            padding-top: 60px;
+            padding-bottom: 20px;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        p {
+            color: white;
+            font-size: 1.0em;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        a {
+            color: #BB9AB1;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .text-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .portfolio-resume {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .portfolio-resume img {
+            width: 180px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title">About Me</div>
+        <nav>
+            <a href="Project.html" class="home-link">Home</a>
+            <a href="contact.html" class="contact-link">Contact</a>
+            <a href="About.html" class="about-link active">About</a>
+            <span></span>
+        </nav>
+    </header>
+
+    <div class="about-content">
+        <h1>Hi, I'm Lujain Yousef</h1>
+    <div class="text-image-container">
+            <p>I am studying Data Science 📊 at Balqaa Applied University. My expertise lies in data analysis and machine learning 🤖, and I have also gained valuable knowledge in cybersecurity 🔐, particularly in blue teaming. I enjoy tackling complex challenges and continuously seek opportunities to expand my skills 📚. Outside of academics, I am deeply interested in web development 🌐 and design 🎨, which inspired me to build this portfolio. I'm excited to share my work and collaborate with like-minded individuals on impactful projects 🤝.</p>
+            <img src="https://i.ibb.co/9gmKq5x/Untitled-design-47.png" alt="Personal Image" width="600" height="400" />
+      </div>
+
+        <div class="portfolio-resume">
+            <div>
+                <h2>Portfolio</h2>
+                <a href="https://www.datacamp.com/portfolio/ylujain">
+                    <img src="https://i.ibb.co/brL4tY0/Untitled-design-53.png" alt="Portfolio Image" />
+                </a>
+          </div>
+            <div>
+                <h2>Resume</h2>
+                <a href="https://www.canva.com/design/DAGZZjbMD3M/Mocs3Bk-64oUS0TSW1ZOTA/view?utm_content=DAGZZjbMD3M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hebffba138c">
+                    <img src="https://i.ibb.co/3dtmmGs/Untitled-design-52.png" alt="Resume Image" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a');
+            const currentPage = window.location.pathname;
+
+            links.forEach(link => {
+                if (currentPage.includes(link.getAttribute('href'))) {
+                    link.classList.add('active');
+                }
+            });
+
+            function updateSpanPosition() {
+                const activeLink = document.querySelector('nav a.active');
+                const span = document.querySelector('nav span');
+                if (activeLink) {
+                    const linkPosition = activeLink.getBoundingClientRect();
+                    const navPosition = document.querySelector('nav').getBoundingClientRect();
+                    span.style.left = `${linkPosition.left - navPosition.left}px`;
+                }
+            }
+
+            updateSpanPosition();
+
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    links.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                    updateSpanPosition();
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
