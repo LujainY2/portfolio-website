@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Page</title>
+      <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+     body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #cacbbc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            background-color:#cacbbc;
+        }   
+
+        header {
+            width: 100%;
+            height: 150px;
+            background-image: url("https://i.ibb.co/zQnqS9h/Untitled-design-64.png");
+            background-repeat: no-repeat;
+            background-position: center top;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 2, 0, 0.1);
+            padding-top: 10px; 
+            position: relative; 
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+       
+        }
+
+.social-links {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space evenly between items */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add spacing between the items */
+    margin-top: 20px; /* Add some space above the social links */
+}
+
+.social-links a img {
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.social-links a img:hover {
+    transform: scale(1.1); /* Slight zoom-in effect on hover */
+}
+
+
+         nav {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-image: url("https://i.ibb.co/60m8Jgm/Untitled-design-71.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    margin-top: 0; 
+     position: relative;
+}
+
+        nav a {
+            display: inline-block;
+            font-size: 1em;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            padding: 0 30px;
+            z-index: 2;
+        }
+
+        nav a.active {
+            color: white;
+            font-weight: bold;
+        }
+
+      nav span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(45deg, #cacbbc, #cacbbc);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            z-index: 0;
+        }
+
+        nav a:nth-child(1).active ~ span {
+            left: 0;
+        }
+
+        nav a:nth-child(2).active ~ span {
+            left: 120px;
+        }
+
+        nav a:nth-child(3).active ~ span {
+            left: 240px;
+        }
+
+ .about-content {
+            background-color: #cacbbc;
+            width: 70%;
+            max-width: 1000px;
+            margin-top:20px; 
+            padding-top: 100px;
+            padding-bottom: 20px;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+  .text-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+         
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">Contact Me</div>
+    </header>
+    <nav>
+        <a href="Project.html">Home</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="About.html">About</a>
+        <span></span>
+    </nav>
+
+      <div class="about-content">
+        <h1 style="text-align: center;">Get in Touch</h1>
+
+<div class="text-image-container">
+    <h2 style="text-align: center;" >Contact Details</h2>
+    <p>Email: Ylujain@yahoo.com</p>
+    <p>Phone: +962 786011745</p>
+    <p>Whatsapp: +962 786011745</p>
+    <p>Address: Jordan</p>
+</div>
+
+<h2 style="text-align: center;" >Social Links:</h2>
+<div class="social-links" style="display: block; text-align: center; margin-top: 10px;">
+    <a href="https://www.linkedin.com/in/lujain-yousef-a5a656265/" style="margin-right: 20px;">
+        <img src="https://i.ibb.co/qkkccyM/Web-Portfolio.png" height="100" width="150" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/lujain__youseff/">
+        <img src="https://i.ibb.co/fDqtFBN/Untitled-design-60.png" height="100" width="150" alt="Instagram">
+    </a>
+</div>
+
+      
+    </div>
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('nav a');
+    const currentPage = window.location.pathname;
+    const span = document.querySelector('nav span');
+
+    // Update the active link based on the current page
+    links.forEach(link => {
+        if (currentPage.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+
+    // Function to update the position and width of the span based on active link
+    function updateSpanPosition() {
+        const activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            const linkPosition = activeLink.getBoundingClientRect();
+            const navPosition = document.querySelector('nav').getBoundingClientRect();
+            span.style.left = `${linkPosition.left - navPosition.left}px`;
+            span.style.width = `${linkPosition.width}px`; // Set the span width to the active link's width
+        }
+    }
+
+    // Update position when the page is loaded
+    updateSpanPosition();
+
+    // Event listener to update position when a link is clicked
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+            updateSpanPosition();
+        });
+    });
+});
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
