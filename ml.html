@@ -104,6 +104,25 @@
     max-width: 50%;
     font-size: 18px;
 }
+.social-links {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space evenly between items */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add spacing between the items */
+    margin-top: 20px; /* Add some space above the social links */
+}
+
+.social-links a img {
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.social-links a img:hover {
+    transform: scale(1.1); /* Slight zoom-in effect on hover */
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -148,8 +167,13 @@
         <!-- Right Content -->
         <div class="right-content">
             <div class="left-content">
+
+
                 <h2>Projects</h2>
              <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start;">
+
+ <div class="social-links" style="display: flex; justify-content: 
+flex-start; gap: 20px; margin-top: 20px; margin-left: -100px;">
 
     <!-- Pokemon Legendary Classification -->
     <div style="flex: 1 1 calc(50% - 20px); max-width: calc(50% - 20px); text-align: center;">
@@ -174,14 +198,19 @@
             <img class="styled-img" src="https://i.ibb.co/hWhw8QQ/Untitled-design-8.png" alt="Cancer Prediction Project" style="max-width: 40%; height: auto;">
         </a>
     </div>
-
+</div>
 </div>
 
 
                 <h2>GUIs - Streamlit</h2>
+
                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
 
+ <div class="social-links" style="display: flex; justify-content: 
+flex-start; gap: 20px; margin-top: 20px; margin-left: -100px;">
     <!-- Streamlit App 1 -->
+
+
     <div style="flex: 1 1 calc(50% - 20px); max-width: calc(50% - 20px); text-align: center;">
         <a href="https://mainpy-cmxwiwg3psbgvazjmzqbwg.streamlit.app/" target="_blank">
             <img class="styled-img" src="https://i.ibb.co/VSHqv5k/Untitled-design-6.png" alt="Streamlit App 1" style="max-width: 40%; height: auto;">
@@ -194,8 +223,46 @@
             <img class="styled-img" src="https://i.ibb.co/VSHqv5k/Untitled-design-6.png" alt="Streamlit App 2" style="max-width: 40%; height: auto;">
         </a>
     </div>
-
 </div>
+</div>
+
+
+
+
+<script>
+
+ // Function to update the position and width of the span based on active link
+    function updateSpanPosition() {
+        const activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            const linkPosition = activeLink.getBoundingClientRect();
+            const navPosition = document.querySelector('nav').getBoundingClientRect();
+            span.style.left = `${linkPosition.left - navPosition.left}px`;
+            span.style.width = `${linkPosition.width}px`; // Set the span width to the active link's width
+        }
+    }
+
+    // Update position when the page is loaded
+    updateSpanPosition();
+
+    // Event listener to update position when a link is clicked
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+            updateSpanPosition();
+        });
+    });
+});
+
+
+</script>
+
+
+
+
+
+
 
 </body>
 </html>
