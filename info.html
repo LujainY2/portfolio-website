@@ -234,7 +234,45 @@
             <li>Get hands-on training through internships or projects.</li>
         </ul>
     </div>
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('nav a');
+    const currentPage = window.location.pathname;
+    const span = document.querySelector('nav span');
 
+    // Update the active link based on the current page
+    links.forEach(link => {
+        if (currentPage.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+
+    // Function to update the position and width of the span based on active link
+    function updateSpanPosition() {
+        const activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            const linkPosition = activeLink.getBoundingClientRect();
+            const navPosition = document.querySelector('nav').getBoundingClientRect();
+            span.style.left = `${linkPosition.left - navPosition.left}px`;
+            span.style.width = `${linkPosition.width}px`; // Set the span width to the active link's width
+        }
+    }
+
+    // Update position when the page is loaded
+    updateSpanPosition();
+
+    // Event listener to update position when a link is clicked
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+            updateSpanPosition();
+        });
+    });
+});
+
+
+</script>
 </body>
 </html>
 
