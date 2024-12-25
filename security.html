@@ -35,6 +35,12 @@
             margin-bottom: 7px; 
         }
 
+        .pdf-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
          .pdf-container {
             display: flex;
             justify-content: center;
@@ -118,12 +124,10 @@ margin-top: -100px;
 <div class="container">
     <img class="styled-img" src="https://i.ibb.co/nQ9Vf7p/Untitled-design-59.png" width="400">
     <div class="text">
-        <p>
-<span
-     class="txt-rotate"
-     data-period=fixed
-     data-rotate='[ "After participating in cybersecurity technician training, I learned many foundational concepts and tools in the vast field of cybersecurity."]'></span>
+        <p class="ml3">
+After participating in cybersecurity technician training, I learned many foundational concepts and tools in the vast field of cybersecurity.
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
 </p>
     </div>
@@ -222,6 +226,31 @@ window.onload = function() {
 </script>
 
 <script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
+
+
+</script>
+
+<script>
   const animatedText = document.getElementById('animatedText');
         let colorIndex = 0;
  
@@ -238,7 +267,6 @@ window.onload = function() {
 </script>
 </body>
 </html>
-
 
 
 
