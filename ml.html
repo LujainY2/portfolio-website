@@ -6,6 +6,14 @@
     <title>Machine Learning</title>
 
    <style>
+      <!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning</title>
+
+   <style>
         body {
             margin: 0;
             padding: 0;
@@ -43,17 +51,17 @@
         }
 
         .pdf {
-            width: 90%;
-            max-width: 600px;
-            height: 400px;
+            width: 30%;
+            max-width: 500px;
+            height: 300px;
             border: none;
         }
 
         .certification {
             background-color: #FFEFEF;
-            padding: 3px; /* Increased padding for a more spaced look */
+            padding: 2px; 
             color: #0F0E0E;
-            margin: 20px 0; /* Increased margin for better separation */
+            margin: 15px 0; 
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -75,15 +83,22 @@
 
         .project {
             display: flex;
-            flex-direction: column; /* Stack images vertically */
-            align-items: center;   /* Center items horizontally */
+            gap: 20px;
+            justify-content: center;
         }
 
-        .project img {
-            max-width: 90%; /* Make images responsive */
-            border-radius: 20px;
-            margin-bottom: 30px; /* Increased spacing between images */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional styling */
+         .project-item {
+            flex: 1 1 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 .container {
     display: flex;
@@ -99,10 +114,13 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .text {
-    max-width: 50%;
-    font-size: 18px;
+    max-width: 30%;
+    font-size: 70px;
+  text-align: left;
+margin-top: -100px; 
+
+
 }
 .social-links {
     display: flex;
@@ -119,8 +137,6 @@
 .social-links a img:hover {
     transform: scale(1.1); /* Slight zoom-in effect on hover */
 }
-
-
 
 
     </style>
