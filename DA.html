@@ -114,22 +114,9 @@ margin-top: -100px;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 <body>
-    <h1>Data Analysis</h1>
+    <h1 id="animatedText">Data Analysis</h1>
 
 <div class="container">
     <img class="styled-img" src="https://i.ibb.co/X5t4whQ/Untitled-design-46.png" alt="Machine Learning" width="400">
@@ -240,6 +227,24 @@ window.onload = function() {
 };
 
 </script>
+
+
+<script>
+  const animatedText = document.getElementById('animatedText');
+        let colorIndex = 0;
+ 
+        function changeColor() {
+            const colors = ['#F6F5F2', '#F0EBE3', '#CA8787','#FFEFEF']; // Add more colors as needed
+            animatedText.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+ 
+        // Change text color every 1000 milliseconds (1 second)
+        setInterval(changeColor, 1000);
+
+
+</script>
 </body>
 </html>
+
 
