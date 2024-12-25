@@ -111,7 +111,7 @@ margin-top: -100px;
 
 </head>
 <body>
-    <h1>Security</h1>
+    <h1 id="animatedText" >Security</h1>
 
    
 
@@ -221,8 +221,24 @@ window.onload = function() {
 
 </script>
 
+<script>
+  const animatedText = document.getElementById('animatedText');
+        let colorIndex = 0;
+ 
+        function changeColor() {
+            const colors = ['#F6F5F2', '#F0EBE3', '#CA8787','#FFEFEF']; // Add more colors as needed
+            animatedText.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+ 
+        // Change text color every 1000 milliseconds (1 second)
+        setInterval(changeColor, 1000);
+
+
+</script>
 </body>
 </html>
+
 
 
 
