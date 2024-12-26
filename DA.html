@@ -35,6 +35,12 @@
             margin-bottom: 7px; /* Reduced bottom margin for closer spacing */
         }
 
+        .pdf-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
           .pdf-container {
             display: flex;
             justify-content: center;
@@ -121,14 +127,11 @@ margin-top: -100px;
 <div class="container">
     <img class="styled-img" src="https://i.ibb.co/X5t4whQ/Untitled-design-46.png" alt="Machine Learning" width="400">
     <div class="text">
-        <p>
-<span
-     class="txt-rotate"
-     data-period=fixed
-     data-rotate='[ "Data analysis is crucial in various fields, including business intelligence and finance. Tools like Power BI and Tableau are widely used to visualize and interpret data."]'></span>
+        <p class="ml3"> Data analysis is crucial in various fields, including business intelligence and finance. Tools like Power BI and Tableau are widely used to visualize and interpret data.
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
-
+</p>
 
     </div>
 </div>
@@ -225,6 +228,32 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+
+</script>
+
+
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
+
 
 </script>
 
